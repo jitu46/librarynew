@@ -1,0 +1,18 @@
+<table style="width: 100%">
+	<thead>
+		<tr>
+			<th>Title</th>
+			<th>Body</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><h3><%= @book.title %></h3></td>
+			<td><%= @book.body %></td>
+			<% if @book.user ==current_user %>
+				<th><%= link_to "Edit Book", edit_book_path(@book) %></th>
+				<th><%= link_to "Delete", book_path(@book), method: :delete, data: {confirm: "Are you sure?"} %></th>
+			<% end %>
+		</tr>
+	</tbody>
+</table>
